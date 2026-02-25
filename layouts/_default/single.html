@@ -1,0 +1,16 @@
+{{ define "main" }}
+<article class="prose lg:prose-xl mx-auto">
+    <header class="mb-8">
+        <h1 class="text-4xl font-extrabold mb-2">{{ .Title }}</h1>
+        <time class="text-sm text-base-content/60">{{ .Date.Format "Jan 2, 2006" }}</time>
+    </header>
+    
+    <div class="mt-6 leading-relaxed">
+        {{ .Content }}
+    </div>
+
+    <div class="mt-12 pt-6 border-t border-base-300 text-center">
+        <a href="/posts" class="btn btn-outline btn-sm">← Back to Posts</a>
+    </div>
+</article>
+{{ end }}

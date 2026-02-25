@@ -1,0 +1,19 @@
+{{ define "main" }}
+<h1 class="text-3xl font-bold mb-8 uppercase tracking-widest">Archive</h1>
+<div class="space-y-6">
+    {{ range .Paginator.Pages }}
+    <div class="card bg-base-200 shadow-md hover:shadow-lg transition-shadow">
+        <div class="card-body">
+            <h2 class="card-title text-2xl font-semibold">
+                <a href="{{ .Permalink }}" class="hover:text-primary">{{ .Title }}</a>
+            </h2>
+            <p class="text-base-content/70 line-clamp-2">{{ .Summary }}</p>
+            <div class="card-actions justify-end mt-4">
+                <span class="text-xs font-mono opacity-50 uppercase self-center mr-2">{{ .Date.Format "Jan 2, 2006" }}</span>
+                <a href="{{ .Permalink }}" class="btn btn-sm btn-ghost">Read More</a>
+            </div>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

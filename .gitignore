@@ -1,0 +1,45 @@
+# --- Hugo Specific ---
+# The public folder is where the final HTML is built.
+# Since your Mate 20 will build this itself via the Git Hook, 
+# you don't need to track it in Git.
+/public/
+/resources/_gen/
+/assets/jsconfig.json
+hugo_stats.json
+.hugo_build.lock
+
+# --- Node.js / Tailwind Specific ---
+# Never track node_modules; they are huge and platform-specific.
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.eslintcache
+
+# --- Generated CSS ---
+# Since we want the Mate 20 to generate the final CSS 
+# based on input.css, we ignore the output file.
+/static/css/style.css
+
+# --- OS Specific (Mac & Android) ---
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+# Termux/Android temp files
+*~
+*.swp
+
+# --- VSCodium / IDE Specific ---
+.vscode/
+.idea/
+.project
+.settings/
+
+# --- Environment Secrets ---
+# If you eventually use API keys or Cloudflare secrets locally.
+.env
+.env.local

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="cupcake">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+</head>
+<body class="flex flex-col min-h-screen bg-base-100 font-sans antialiased">
+
+    <header class="navbar bg-base-200 shadow-sm px-4 md:px-8">
+        <div class="flex-1">
+            <a href="/" class="btn btn-ghost text-xl font-bold tracking-tight">{{ .Site.Title }}</a>
+        </div>
+        <nav class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+                <li><a href="/posts" class="hover:text-primary">Blog</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-10 max-w-3xl">
+        {{ block "main" . }}{{ end }}
+    </main>
+
+    <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
+        <aside>
+            <p>© {{ now.Format "2006" }} - Built on a Mate 20</p>
+        </aside>
+    </footer>
+
+</body>
+</html>
