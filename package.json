@@ -6,7 +6,7 @@
   "scripts": {
     "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./static/css/style.css",
     "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./static/css/style.css --watch",
-    "dev": "npm run watch:css & hugo server -D",
+    "dev": "npm run watch:css & sleep 2 && hugo server -D --baseURL http://localhost:1313/ --bind 0.0.0.0",
     "prod": "npm run build:css && hugo --minify"
   },
   "keywords": [],

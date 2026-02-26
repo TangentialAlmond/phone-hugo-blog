@@ -1,4 +1,6 @@
-baseURL = 'https://your-website.domain/'
+baseURL = "https://example.com" # PLACEHOLDER: Change this to your domain
+canonifyURLs = false            # Important: prevents Hugo from forcing the placeholder URL
+relativeURLs = true             # Best practice for "portable" sites
 languageCode = 'en-us'
 title = 'My New Hugo Project'
 
