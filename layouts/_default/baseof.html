@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="cupcake">
+<html lang="en" data-theme="{{ .Site.Params.daisyTheme }}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "css/style.css" | absURL }}">
+    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
 </head>
 <body class="flex flex-col min-h-screen bg-base-100 font-sans antialiased">
 
@@ -25,7 +25,8 @@
 
     <footer class="footer footer-center p-10 bg-base-200 text-base-content rounded">
         <aside>
-            <p>© {{ now.Format "2006" }} - Built on a Mate 20</p>
+            <p>{{ .Site.Title }} © {{ now.Format "2006" }} {{ .Site.Params.author }}
+            <br>Self-hosted on a {{ .Site.Params.hardwareName }}</p>
         </aside>
     </footer>
 
