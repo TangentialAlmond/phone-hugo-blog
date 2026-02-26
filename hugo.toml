@@ -1,10 +1,10 @@
-baseURL = "https://example.com" # PLACEHOLDER: Change this to your domain
+baseURL = "https://tangentialalmond.cc" # PLACEHOLDER: Change this to your domain
 canonifyURLs = false            # Important: prevents Hugo from forcing the placeholder URL
 relativeURLs = true             # Best practice for "portable" sites
 languageCode = 'en-us'
 title = 'My New Hugo Project'
 
 [params]
-    author = "Author"
-    daisyTheme = "light"
-    hardwareName = "Mobile Device"
+    author = "Amanda Ng"
+    daisyTheme = "cupcake"
+    hardwareName = "Huawei Mate 20"
