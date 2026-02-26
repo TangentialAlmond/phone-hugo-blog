@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "npx tailwindcss -i ./assets/css/input.css -o ./static/css/style.css",
-    "watch:css": "npx tailwindcss -i ./assets/css/input.css -o ./static/css/style.css --watch",
-    "dev": "npm run watch:css & sleep 2 && hugo server -D --baseURL http://localhost:1313/ --bind 0.0.0.0",
+    "build:css": "tailwindcss -i ./assets/css/input.css -o ./static/css/style.css",
+    "watch:css": "npm run build:css -- --watch",
+    "hugo:serv": "hugo server -D --baseURL http://localhost:1313/ --bind 0.0.0.0",
+    "dev": "npm run watch:css & sleep 5 & npm run hugo:serv",
     "prod": "npm run build:css && hugo --minify"
   },
   "keywords": [],
