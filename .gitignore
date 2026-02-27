@@ -9,6 +9,9 @@ hugo_stats.json
 .hugo_build.lock
 content/posts
 
+# --- Launch script logs ---
+logs
+
 # --- Node.js / Tailwind Specific ---
 # Never track node_modules; they are huge and platform-specific.
 node_modules/
