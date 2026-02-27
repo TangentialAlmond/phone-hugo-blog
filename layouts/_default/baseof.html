@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+    {{ $css := resources.Get "css/main.css" | postCSS }}
+    <link rel="stylesheet" href="{{ $css.RelPermalink }}">
 </head>
 <body class="flex flex-col min-h-screen bg-base-100 font-sans antialiased">
 
