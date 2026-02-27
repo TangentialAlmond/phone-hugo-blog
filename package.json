@@ -4,9 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:css": "tailwindcss -i ./assets/css/main.css -o ./assets/css/compiled.css",
     "test": "vitest run",
-    "dev": "hugo server -D --baseURL http://localhost:1313 --bind 0.0.0.0",
-    "prod": "NODE_ENV=production hugo --gc --minify && npm run test"
+    "build": "npm run build:css && HUGO_NODE_BIN=$(which node) hugo --gc --minify",
+    "dev": "npm run build:css && HUGO_NODE_BIN=$(which node) hugo server -D --bind 0.0.0.0",
+    "prod": "npm run build && npm run test"
   },
   "keywords": [],
   "author": "",
