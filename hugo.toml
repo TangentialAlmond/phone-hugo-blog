@@ -8,3 +8,8 @@ title = 'Tangential Almond'
     author = "Amanda Ng"
     daisyTheme = "cupcake"
     hardwareName = "Huawei Mate 20"
+
+[build]
+    [[build.publishResources]]
+        src = "css/main.css"
+        target = "css/main.css"
