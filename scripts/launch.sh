@@ -16,10 +16,12 @@ fi
 
 # 3. Launch Logic
 if [[ "$PLATFORM" == *"Android"* ]]; then
-    echo "📱 Starting Cloudflare Tunnel (Mate 20 Mode)..."
-    hugo server --watch=false --appendPort=false --bind 127.0.0.1 --port 1313 > ~/hugo.log 2>&1 &
-    cloudflared tunnel run --protocol http2
+    echo "Mate 20 mode: Serving the Site and Starting Cloudflare Tunnel..."
+    hugo server --watch=false --appendPort=false \
+        --baseURL="https://tangentialalmond.cc" \
+        --bind 127.0.0.1 --port 1313 > ~/hugo.log 2>&1 &
+        cloudflared tunnel run --protocol http2
 else
-    echo "💻 Starting Local Dev Server (Mac Mode)..."
+    echo "Mac mode: Starting Local Dev Server..."
     hugo server -D
 fi
