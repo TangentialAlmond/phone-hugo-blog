@@ -4,11 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:css": "tailwindcss -i ./assets/css/input.css -o ./static/css/style.css",
-    "watch:css": "npm run build:css -- --watch",
-    "hugo:serv": "hugo server -D --baseURL http://localhost:1313/ --bind 0.0.0.0",
-    "dev": "npm run watch:css & sleep 5 & npm run hugo:serv",
-    "prod": "rm -rf public resources && npm run build:css && hugo --minify"
+    "dev": "hugo server -D --baseURL http://localhost:1313 --bind 0.0.0.0",
+    "prod": "rm -rf public resources && hugo --minify"
   },
   "keywords": [],
   "author": "",
@@ -18,9 +15,7 @@
     "autoprefixer": "^10.4.24",
     "daisyui": "^4.12.24",
     "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
     "tailwindcss": "^3.4.19"
-  },
-  "dependencies": {
-    "postcss-cli": "^11.0.1"
   }
 }
