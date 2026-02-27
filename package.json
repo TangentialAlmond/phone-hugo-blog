@@ -5,9 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest run",
-    "test:watch": "vitest",
     "dev": "hugo server -D --baseURL http://localhost:1313 --bind 0.0.0.0",
-    "prod": "hugo --gc --minify"
+    "prod": "hugo --gc --minify && npm run test"
   },
   "keywords": [],
   "author": "",
