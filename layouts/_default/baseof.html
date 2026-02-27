@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    {{ $css := resources.Get "css/main.css" | postCSS }}
+    {{ $css := resources.Get "css/main.css" }}
+    
+    {{/* Attempt PostCSS only if the file exists */}}
     {{ if $css }}
+    {{ $css = $css | postCSS (dict "config" "postcss.config.js" "noMap" true) }}
     {{ $css = $css | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
     {{ else }}
-    <p style="display:none">CSS Transformation Failed</p>
+    {{ warnf "CRITICAL: css/main.css not found in assets folder!" }}
     {{ end }}
 </head>
 <body class="flex flex-col min-h-screen bg-base-100 font-sans antialiased">
