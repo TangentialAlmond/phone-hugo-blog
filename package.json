@@ -7,7 +7,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "dev": "hugo server -D --baseURL http://localhost:1313 --bind 0.0.0.0",
-    "prod": "rm -rf public resources && hugo --minify"
+    "prod": "hugo --gc --minify"
   },
   "keywords": [],
   "author": "",
