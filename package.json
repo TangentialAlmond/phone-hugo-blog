@@ -6,7 +6,7 @@
   "scripts": {
     "test": "vitest run",
     "dev": "hugo server -D --baseURL http://localhost:1313 --bind 0.0.0.0",
-    "prod": "hugo --gc --minify && npm run test"
+    "prod": "NODE_ENV=production hugo --gc --minify && npm run test"
   },
   "keywords": [],
   "author": "",
