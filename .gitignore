@@ -20,7 +20,7 @@ yarn-error.log*
 # --- Generated CSS ---
 # Since we want the Mate 20 to generate the final CSS 
 # based on input.css, we ignore the output file.
-/static/css/style.css
+/assets/css/compiled.css
 
 # --- OS Specific (Mac & Android) ---
 .DS_Store
