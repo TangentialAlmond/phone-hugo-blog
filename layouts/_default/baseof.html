@@ -5,7 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
     {{ $css := resources.Get "css/main.css" | postCSS }}
+    {{ if $css }}
+    {{ $css = $css | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+    {{ else }}
+    <p style="display:none">CSS Transformation Failed</p>
+    {{ end }}
 </head>
 <body class="flex flex-col min-h-screen bg-base-100 font-sans antialiased">
 
