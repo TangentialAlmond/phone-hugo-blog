@@ -10,6 +10,4 @@ title = 'Tangential Almond'
     hardwareName = "Huawei Mate 20"
 
 [build]
-    [[build.publishResources]]
-        src = "css/main.css"
-        target = "css/main.css"
+    writeStats = true
