@@ -4,7 +4,7 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-This repository is a barebones set up for a website self-hosted on a mobile phone. In my case, I used a Huawei Mate 20 with 6 GB RAM and 128 GB storage capacity, did the initial setup on the phone before transitioning to editing the files using a laptop ([read about my experience here](https://tangentialalmond.cc)).
+This repository is a barebones set up for a website self-hosted on a mobile phone. In my case, I used a Huawei Mate 20 with 6 GB RAM and 128 GB storage capacity, did the initial setup on the phone before transitioning to editing the files using a laptop. I also wrote a [blog post](https://tangentialalmond.cc/posts/self-hosting-blog/) about what learnt that gives a background on my choice of tech stack.
 
 ## Table of contents
 - [Table of contents](#table-of-contents)
