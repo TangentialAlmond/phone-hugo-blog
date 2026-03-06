@@ -8,3 +8,11 @@ title = 'My New Hugo Project'
     author = "Author"
     daisyTheme = "light"
     hardwareName = "Mobile Device"
+
+[build]
+    writeStats = true
+
+[markup]
+    [markup.goldmark]
+        [markup.goldmark.renderer]
+            unsafe = true
