@@ -1,11 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="{{ .Site.Params.daisyTheme }}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
-    <link rel="stylesheet" href="{{ "css/style.css" | relURL }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{ if .IsHome }}{{ .Site.Title }}{{ else }}{{ .Title }} | {{ .Site.Title }}{{ end }}</title>
+  {{ $css := resources.Get "css/compiled.css" }}
+  {{ if $css }}
+  {{ $css = $css | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+  {{ else }}
+  <script>console.error("Critical: compiled.css missing. Run npm run build:css");</script>
+  {{ end }}
 </head>
+
 <body class="flex flex-col min-h-screen bg-base-100 font-sans antialiased">
 
     <header class="navbar bg-base-200 shadow-sm px-4 md:px-8">
