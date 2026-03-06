@@ -15,8 +15,9 @@ This repository is a barebones set up for a website self-hosted on a mobile phon
   - [Configure your domain](#configure-your-domain)
   - [Launch the website](#launch-the-website)
 - [Creating new posts](#creating-new-posts)
+- [Optional: Connect your phone to your laptop via SSH](#optional-connect-your-phone-to-your-laptop-via-ssh)
+  - [On your phone via Termux](#on-your-phone-via-termux)
   - [On your laptop/desktop via Terminal](#on-your-laptopdesktop-via-terminal)
-  - [A note on the bare repo](#a-note-on-the-bare-repo)
 
 ## Hardware
 In terms of hardware, you'll need:
@@ -91,6 +92,15 @@ This repo uses **Archetypes** to automate metadata.
    hugo new posts/my-new-post.md
    ```
 2. A file will be created in `content/posts` with `draft: true`. Write the contents of your post in the file and set `draft: false` to make the file i.e. post go live.
+3. If you've connected your phone to your laptop, you can `git push` the post:
+   ```bash
+   git push -u phone main
+   ```
+The post should appear. If it does not:
+- check if `draft: true` has been set in the frontmatter of your post
+- re-run the launch script on your phone by:
+  - **Terminate the website:** Press "CTRL" and "C".
+  - **Re-launch the website:** `bash scripts/launch.sh`
 
 ## Optional: Connect your phone to your laptop via SSH
 Editing posts and/or the website can be challenging via Termux. To make these processes more comfortable, you can connect your phone to your laptop/desktop via SSH. This set up enables you to use your editor of choice on your laptop/desktop, where you can:
@@ -135,46 +145,8 @@ Editing posts and/or the website can be challenging via Termux. To make these pr
    ```bash
    ssh phone
    ```
-
-### A note on the bare repo
-Personally I found setting up a bare repo useful for synchronizing the repo between my phone and laptop. Here's how I did it:
-1. On the phone via Termux:
+5. To enable `git push` from your laptop to your phone, run the following in Termux:
    ```bash
-   git init --bare ~/blog.git
-   ```
-2. On your laptop/desktop via Terminal:
-   ```bash
-   git remote add phone phone:~/blog.git
-   ```
-3. Back on the phone via Termux, set up a Git Hook to accept `push` requests from your laptop/desktop and deploy the website. By first creating the file:
-   ```bash
-   nano ~/repos/blog.git/hooks/post-receive
-   ```
-   Thereafter, paste the following snippet:
-   ```bash
-   #!/bin/bash
-   # 1. Setup paths
-   TARGET="$HOME/blog"
-   GIT_DIR="$HOME/repos/blog.git"
-
-   # 2. Deploy files to the live folder
-   # Use 'master' or 'main' depending on your branch name
-   git --work-tree=$TARGET --git-dir=$GIT_DIR checkout -f main
-
-   # 3. Build the site
-   cd $TARGET
-   npm install
-   npm run prod
-   ```
-4. Check if the bare repo has been set up correctly by checking the commit history inside `blog.git`:
-   ```bash
-   cd ~/repos/blog.git
-   git log --oneline
-   ```
-   You should see the commit history, e.g.:
-   ```text
-   ~/repos/blog.git $ git log --oneline
-   b785f99 (HEAD -> master) chore: set baseURL as a placeholder
-   7e4009e docs(README.md): minor update of repo set up
-   f970b9a chore: do not track posts using git
+   # Run in the cloned repo in your phone e.g. in the blog directory
+   git config receive.denyCurrentBranch updateInstead
    ```
