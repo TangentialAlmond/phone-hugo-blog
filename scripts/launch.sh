@@ -21,7 +21,7 @@ fi
 # 4. Launch Logic
 # Note: Set baseURL as your domain
 if [[ "$PLATFORM" == *"Android"* ]]; then
-    echo "Mate 20 mode: Serving the Site and Starting Cloudflare Tunnel..."
+    echo "Anroid mode: Serving the Site and Starting Cloudflare Tunnel..."
     mkdir -p logs
     hugo server --bind 127.0.0.1 \
 	    --port 1313 \
