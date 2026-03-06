@@ -31,6 +31,6 @@ if [[ "$PLATFORM" == *"Android"* ]]; then
     echo "🔗 Opening CloudFlare tunnel (TCP mode)..."
     cloudflared tunnel run --protocol http2
 else
-    echo "Mac mode: Starting Local Dev Server..."
+    echo "Laptop mode: Starting Local Dev Server..."
     hugo server -D
 fi
