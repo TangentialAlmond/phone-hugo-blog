@@ -23,6 +23,11 @@ This repository is a barebones set up for a website self-hosted on a mobile phon
 ## Preview
 Here's a preview of the bare bones website:
 
+<div align="center">
+  <video src="https://github.com/user-attachments/assets/97894b16-1001-4506-a08c-4ee66d422418" width="80%" muted autoplay loop>
+    Your browser does not support the video tag.
+  </video>
+</div>
 
 ## Hardware
 In terms of hardware, you'll need:
