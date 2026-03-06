@@ -8,6 +8,7 @@ This repository is a barebones set up for a website self-hosted on a mobile phon
 
 ## Table of contents
 - [Table of contents](#table-of-contents)
+- [Preview](#preview)
 - [Hardware](#hardware)
 - [Mobile phone set up](#mobile-phone-set-up)
   - [Set up Termux](#set-up-termux)
@@ -18,6 +19,10 @@ This repository is a barebones set up for a website self-hosted on a mobile phon
 - [Optional: Connect your phone to your laptop via SSH](#optional-connect-your-phone-to-your-laptop-via-ssh)
   - [On your phone via Termux](#on-your-phone-via-termux)
   - [On your laptop/desktop via Terminal](#on-your-laptopdesktop-via-terminal)
+
+## Preview
+Here's a preview of the bare bones website:
+
 
 ## Hardware
 In terms of hardware, you'll need:
