@@ -77,38 +77,12 @@ The entire setup can be done on the mobile device; the laptop/desktop makes edit
    ```
 
 ### Launch the website
-1. Create a script for launching the website.
+1. Run the launch script.
    ```bash
-   nano ~/start-blog.sh
+   bash scripts/launch.sh
    ```
-2. Paste the following snippet in (replacing with your domain):
-   ```bash
-   #!/bin/bash
 
-   # Kill existing processes
-   pkill -f "hugo server"
-   pkill -f "cloudflared tunnel"
-
-   echo "🚀 Starting Blog..."
-
-   # Start Hugo in background
-   # --appendPort=false is used because Cloudflare handles HTTPS (443)
-   cd ~/blog
-   hugo server --bind 127.0.0.1 --port 1313 \
-     --baseURL="https://your-domain.com" \
-     --appendPort=false > ~/hugo.log 2>&1 &
-
-   echo "✅ Hugo is running in the background."
-
-   # Start the Tunnel using HTTP2 (TCP)
-   echo "🔗 Opening the tunnel (TCP mode)..."
-   cloudflared tunnel run --protocol http2
-   ```
-3. Make the script executable and run it. Viola! Your website should be live! 🎉
-   ```bash
-   chmod +x ~/start-blog.sh
-   bash ~/start-blog.sh
-   ```
+You're ready to go! 👏
 
 ## Creating new posts
 This repo uses **Archetypes** to automate metadata.
