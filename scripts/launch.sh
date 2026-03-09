@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -euo pipefail
+
 # Move to root
 cd "$(dirname "$0")/.."
 
