@@ -4,7 +4,10 @@
 ![License](https://img.shields.io/badge/License-MIT-yellow)
 [![Project Status: Active](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 
-This repository is a barebones set up for a website self-hosted on a mobile phone. In my case, I used a Huawei Mate 20 with 6 GB RAM and 128 GB storage capacity, did the initial setup on the phone before transitioning to editing the files using a laptop. I also wrote a [blog post](https://tangentialalmond.cc/posts/self-hosting-blog/) about what learnt that gives a background on my choice of tech stack.
+This repository is a barebones set up for a website self-hosted on a mobile phone. In my case, I used a Huawei Mate 20 with 6 GB RAM and 128 GB storage capacity, did the initial setup on the phone before transitioning to editing the files using a laptop. I also wrote a [blog post](https://tangentialalmond.cc/posts/self-hosting-blog/) about what learnt and how I chose my tech stack.
+
+> #### A note on `nano`
+> I use `nano` for creating and editing files which works with Termux (by default). If `nano` is not installed in the OS you're working with, try using `vi` (or vim).
 
 ## Table of contents
 - [Table of contents](#table-of-contents)
@@ -34,9 +37,11 @@ In terms of hardware, you'll need:
 - mobile phone
 - optionally a laptop/desktop
 
-The entire setup can be done on the mobile device; the laptop/desktop makes editing files easier.
+The entire setup can be done on the mobile phone; the laptop/desktop makes editing files easier.
 
 ## Mobile phone set up
+The following sub-sections are all carried our via Termux (on the phone).
+
 ### Set up Termux
 1. Factory reset the mobile phone and uninstall any optional applications.
 2. Install F-Droid.
