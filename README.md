@@ -120,7 +120,7 @@ The post should appear. If it does not:
 ## Optional: Connect your phone to your laptop via SSH
 Editing posts and/or the website can be challenging via Termux. To make these processes more comfortable, you can connect your phone to your laptop/desktop via SSH. This set up enables you to use your editor of choice on your laptop/desktop, where you can:
 - set up your editor to tunnel to your phone
-- use git to push/pull updates between your phone and laptop/desktop via [bare repo](#a-note-on-the-bare-repo)
+- use git to push/pull updates between your phone and laptop/desktop
 - or other creative set ups!
 
 ### On your phone via Termux
